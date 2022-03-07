@@ -1,0 +1,135 @@
+:root {
+	--bg-white: #ffffff;
+  --bg-darkred: #b12727;
+  --bg-darkyellow: #e1cd00;
+  --bg-blue: #240089;
+  --bg-green: #8abf36;
+  --bg-gray: #cdcdcd;
+}
+
+#root {
+	background-image: url("https://www.prensar.net/wp-content/uploads/2021/08/netflix-para-videojuegos.jpg");
+	background-attachment: fixed;
+	position: relative;
+}
+
+.container {
+	width: 100%;
+	margin: auto;
+	overflow: hidden;
+	padding-top: 50px;
+	padding-bottom: 50px;
+	position: relative;
+	font-family: "Lato", sans-serif;
+}
+
+.d-flex {
+	display: flex;
+}
+
+.d-block {
+	display: block;
+}
+
+.wrap {
+	flex-wrap: wrap;
+}
+
+.j-center {
+	justify-content: center;
+}
+
+.align-items-center {
+	align-items: center;
+}
+
+.position-relative {
+	position: relative;
+}
+
+.border-none {
+	border: none;
+}
+
+/*.overflow-hidden {
+	overflow: hidden;
+}*/
+
+.text-center {
+	text-align: center;
+}
+
+.mr-4 {
+	margin-right: .25em;
+}
+
+.mr-5 {
+	margin-right: .5em;
+}
+
+.mt-20 {
+	margin-top: 2em;
+}
+
+.mt-30 {
+	margin-top: 3em;
+}
+
+.mt-0 {
+	margin-top: 0 !important;
+}
+
+.mb-0 {
+	margin-bottom: 0 !important;
+}
+
+.mb-20 {
+	margin-bottom: 2em;
+}
+
+.mx-auto {
+	margin-left: auto;
+	margin-right: auto;
+}
+
+.scale:active {
+	transform: scale(85%);
+}
+
+.cursor-pointer:hover {
+	cursor: pointer;
+}
+
+@media (min-width: 1280px) {
+	.container {
+		max-width: 960px;
+	}
+}
+
+@media (min-width: 1600px) {
+	.container {
+		min-width: 1350px;
+	}
+}
+
+@media (max-width: 1279px) {
+	.container {
+		padding-left: 50px;
+		padding-right: 50px;
+	}
+}
+
+@media (max-width: 480px) {
+	#root {
+		background-attachment: scroll;
+	}
+
+	.container {
+		padding-left: 20px;
+		padding-right: 20px;
+	}
+
+	.swiper-slide {
+		max-width: 250px;
+	}
+}

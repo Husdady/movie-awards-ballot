@@ -1,0 +1,183 @@
+#root > .wrapper {
+	background-color: #fff;
+	background-color: rgba(187, 2, 2, 0.66);
+	height: 100vh;
+	width: 100%;
+	position: fixed;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.app-name {
+	text-align: center;
+	text-shadow: 4px 2px #000000;
+	font-family: "Caveat", cursive, sans-serif;
+	    text-rendering: optimizeSpeed;
+}
+
+.movies {
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+
+.movies .movie .title {
+	width: 90%;
+	letter-spacing: 1px;
+	margin-top: .5em;
+	margin-left: auto;
+	margin-right: auto;
+	line-height: 1.1 !important;
+	font-weight: normal !important;
+	font-family: "Bebas Neue", sans-serif;
+}
+
+.movies .movie > figure img {
+	width: 100%;
+	max-width: 100%;
+	height: 350px;
+	object-fit: cover;
+}
+
+.movies .movie > figure > .wrapper {
+	position: absolute;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	right: 0;
+	opacity: 0;
+}
+
+.movies .movie > figure > .wrapper .vote {
+	padding: 7px 20px;
+	border-radius: 4px;
+	color: var(--bg-white);
+	position: relative;
+	font-family: "Bebas Neue", "Lato", sans-serif;
+}
+
+.movies .movie > figure:hover > .wrapper {
+	opacity: 1;
+}
+
+.movie-category {
+	margin-bottom: 0 !important;
+	font-family: "Fjalla One", sans-serif;
+	text-shadow: 1px 2px #000000;
+	font-weight: normal !important;
+}
+
+.app-name,
+.movie-category,
+.movies .movie .title {
+	color: #e1cd00 !important;
+	color: var(--bg-darkyellow) !important;
+}
+
+.search-container {
+	border-radius: 50px;
+	overflow: hidden;
+}
+
+.search {
+	height: 50px;
+	font-size: 1.25em;
+	padding-left: 1.5em;
+	padding-right: 1.5em;
+	border: none;
+	font-weight: bold;
+	background-color: rgba(225, 205, 0, 0.63);
+}
+
+.search::placeholder {
+	font-weight: normal;
+	color: rgba(0, 0, 0, .3);
+}
+
+.search-icon {
+	right: 0;
+  position: absolute;
+  color: var(--bg-darkyellow);
+  height: 100%;
+  width: 50px;
+  border: 0;
+  outline: 0;
+  background-color: #000000;
+}
+
+.submit-votes {
+  width: 100%;
+  max-width: 300px;
+  margin: auto;
+  display: block;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  font-size: 1.5em;
+  font-family: 'Bebas Neue';
+  border-radius: 30px;
+  font-weight: normal;
+  background-color: transparent;
+  transition: all .4s linear;
+  color: var(--bg-darkyellow);
+  border: 3px solid var(--bg-darkyellow);
+}
+
+.submit-votes:hover {
+	color: #000000;
+	font-weight: bold;
+	background-color: var(--bg-darkyellow);
+}
+
+.close-modal {
+	width: 100px;
+  font-weight: bold;
+  padding-top: 7px;
+  padding-bottom: 7px;
+  border-radius: 4px;
+}
+
+.movies-voted .movie-vote figure > img {
+	object-fit: contain;
+}
+
+.movies-voted .movie-vote .title {
+	color: var(--bg-darkyellow);
+}
+
+.movies-voted .movie-vote .value {
+	color: var(--bg-white);
+}
+
+.movies-voted .movie-vote .title,
+.movies-voted .movie-vote .value {
+	font-weight: normal;
+	font-family: "Bebas Neue", sans-serif;
+}
+
+@media (max-width: 480px) {
+	.app-logo {
+		margin-right: 0;
+		height: 60px;
+		width: 60px;
+	}
+
+	.app-name {
+		width: 100%;
+	}
+
+	.movies .movie > figure img {
+		height: 400px;
+	}
+}
+
+@media (max-width: 400px) {
+	.movies .movie {
+		margin: auto;
+		max-width: 250px;
+	}
+
+	.movies .movie > figure img {
+		height: 100%;
+	}
+}
