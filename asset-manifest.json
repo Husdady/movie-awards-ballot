@@ -1,0 +1,28 @@
+{
+  "files": {
+    "main.css": "/movie-awards-ballot/static/css/main.67225321.css",
+    "main.js": "/movie-awards-ballot/static/js/main.c1c0ad7d.js",
+    "static/js/929.10c4909c.chunk.js": "/movie-awards-ballot/static/js/929.10c4909c.chunk.js",
+    "static/js/831.76563fe4.chunk.js": "/movie-awards-ballot/static/js/831.76563fe4.chunk.js",
+    "static/js/181.a7934a40.chunk.js": "/movie-awards-ballot/static/js/181.a7934a40.chunk.js",
+    "static/js/33.f0dba2bc.chunk.js": "/movie-awards-ballot/static/js/33.f0dba2bc.chunk.js",
+    "static/js/789.d5ba9a38.chunk.js": "/movie-awards-ballot/static/js/789.d5ba9a38.chunk.js",
+    "static/js/82.af1612e1.chunk.js": "/movie-awards-ballot/static/js/82.af1612e1.chunk.js",
+    "static/js/141.ab892e36.chunk.js": "/movie-awards-ballot/static/js/141.ab892e36.chunk.js",
+    "static/media/logo.png": "/movie-awards-ballot/static/media/logo.6d23425eb8422d4c60b9.png",
+    "index.html": "/movie-awards-ballot/index.html",
+    "main.67225321.css.map": "/movie-awards-ballot/static/css/main.67225321.css.map",
+    "main.c1c0ad7d.js.map": "/movie-awards-ballot/static/js/main.c1c0ad7d.js.map",
+    "929.10c4909c.chunk.js.map": "/movie-awards-ballot/static/js/929.10c4909c.chunk.js.map",
+    "831.76563fe4.chunk.js.map": "/movie-awards-ballot/static/js/831.76563fe4.chunk.js.map",
+    "181.a7934a40.chunk.js.map": "/movie-awards-ballot/static/js/181.a7934a40.chunk.js.map",
+    "33.f0dba2bc.chunk.js.map": "/movie-awards-ballot/static/js/33.f0dba2bc.chunk.js.map",
+    "789.d5ba9a38.chunk.js.map": "/movie-awards-ballot/static/js/789.d5ba9a38.chunk.js.map",
+    "82.af1612e1.chunk.js.map": "/movie-awards-ballot/static/js/82.af1612e1.chunk.js.map",
+    "141.ab892e36.chunk.js.map": "/movie-awards-ballot/static/js/141.ab892e36.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.67225321.css",
+    "static/js/main.c1c0ad7d.js"
+  ]
+}
