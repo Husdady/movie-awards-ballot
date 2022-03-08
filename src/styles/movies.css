@@ -82,28 +82,21 @@
 
 .search {
 	height: 50px;
-	font-size: 1.25em;
+	border: none;
 	padding-left: 1.5em;
 	padding-right: 1.5em;
-	border: none;
+	background-color: rgba(255, 255, 255, .40);
+}
+
+.search .ant-input {
+	font-size: 1.25em;
 	font-weight: bold;
-	background-color: rgba(225, 205, 0, 0.63);
+	background-color: transparent;
 }
 
-.search::placeholder {
+.search .ant-input::placeholder {
 	font-weight: normal;
-	color: rgba(0, 0, 0, .3);
-}
-
-.search-icon {
-	right: 0;
-  position: absolute;
-  color: var(--bg-darkyellow);
-  height: 100%;
-  width: 50px;
-  border: 0;
-  outline: 0;
-  background-color: #000000;
+	color: rgba(0, 0, 0, .45);
 }
 
 .submit-votes {
@@ -137,22 +130,45 @@
   border-radius: 4px;
 }
 
-.movies-voted .movie-vote figure > img {
+.movies-details .movie figure > img {
 	object-fit: contain;
 }
 
-.movies-voted .movie-vote .title {
+.movies-details .movie .title {
 	color: var(--bg-darkyellow);
 }
 
-.movies-voted .movie-vote .value {
+.movies-details .movie .value {
 	color: var(--bg-white);
 }
 
-.movies-voted .movie-vote .title,
-.movies-voted .movie-vote .value {
+.movies-details .movie .title,
+.movies-details .movie .value {
 	font-weight: normal;
 	font-family: "Bebas Neue", sans-serif;
+}
+
+.autocomplete {
+	border-radius: 7px;
+	position: absolute;
+	top: 110%;
+	left: 0;
+	width: 100%;
+	max-height: 450px;
+	z-index: 9999;
+	background-color: rgba(187, 2, 2, 0.86);
+	overflow-y: auto;
+}
+
+.autocomplete .movies-details .movie {
+	padding-top: 1em;
+	padding-bottom: 1em;
+	z-index: 9999;
+	position: relative;
+}
+
+.autocomplete .movies-details .movie:hover {
+	background-color: rgba(255,255,255, .16)
 }
 
 @media (max-width: 480px) {

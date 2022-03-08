@@ -8,6 +8,7 @@ import { Flex, Button } from "@common";
 import { message } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faVoteYea, faCheckCircle } from "@fortawesome/free-solid-svg-icons";
+import { LazyLoadImage } from "react-lazy-load-image-component";
 
 // Hooks
 import { useMovies } from "@hooks";
@@ -15,6 +16,8 @@ import { useMovies } from "@hooks";
 // Utils
 import Helper from "@utils/Helper";
 import { isEmptyArray } from "@utils/Validations";
+
+const imgPlaceholder = require("@assets/img/img-placeholder.png");
 
 interface MovieImageProps {
   movie: any,
@@ -56,12 +59,17 @@ const MovieImage = memo((props: MovieImageProps) => {
 
 	return (
     <figure className="position-relative">
-	   <img
-      height={450}
-      alt={altImg}
-      src={props.movie.photoUrL}
-      className="movie-image"
+	   <LazyLoadImage
+        height={350}
+        alt={altImg}
+        effect="blur"
+        // placeholder={imgPlaceholder}
+        placeholderSrc={imgPlaceholder}
+        src={props.movie.photoUrL}
+        className="movie-image"
      />
+
+     {/* Image details */}
      <Flex
        align="center"
        justify="center"

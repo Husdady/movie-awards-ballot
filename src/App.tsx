@@ -5,6 +5,7 @@ import React, { lazy } from 'react';
 import 'antd/dist/antd.css';
 import 'swiper/css';
 import 'swiper/css/autoplay';
+import 'react-lazy-load-image-component/src/effects/blur.css';
 import "@styles/custom-antd.css";
 import "@styles/loader.css";
 import "@styles/main.css";

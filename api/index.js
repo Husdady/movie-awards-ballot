@@ -251,19 +251,31 @@ const generateMoviesData = () => {
   };
 };
 
-const movies = generateMoviesData();
+const { movies } = generateMoviesData();
 
 const corsOptions = {
   origin: "*",
   credentials: true,
-  methods: ['GET'],
+  methods: ['GET', 'POST'],
   allowedHeaders: ['*'],
 }
 
 app.use(cors(corsOptions));
 
 app.get('/api/movies', (req, res) => {
-  res.json(movies);
+  res.json({ movies });
+});
+
+app.post('/api/search', (req, res) => {
+  const { q } = req.query;
+
+  if (!q) return res.json(movies);
+
+  const filteredMovies = movies.filter((movie) => {
+    return movie.title.toLowerCase().includes(q.toLowerCase());
+  });
+
+  return res.status(200).json({ movies: filteredMovies });
 });
 
 console.log('App is listening on port ' + port);

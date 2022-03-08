@@ -14,7 +14,6 @@ import Helper from "@utils/Helper";
 SwiperCore.use([Autoplay]);
 
 interface ContainerProps {
-	speed: number,
 	spaceBetween: number,
 	className: string,
   children: React.ReactNode,

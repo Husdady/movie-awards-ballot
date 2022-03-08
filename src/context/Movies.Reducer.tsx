@@ -1,12 +1,10 @@
 // Types
-import { ADD_MOVIE_VOTE, SET_GROUPED_MOVIES, SET_DEFAULT_MOVIES_VOTED } from "./types"; 
+import { GET_MOVIES, ADD_MOVIE_VOTE, SET_GROUPED_MOVIES, SET_DEFAULT_MOVIES_VOTED } from "./types"; 
 
 type MoviesState = {
 	movies: object[],
 	moviesVoted: object[],
-	moviesFiltered: object[],
 	groupedMovies: any,
-	searchValue: String,
 }
 
 type Action = {
@@ -14,16 +12,21 @@ type Action = {
 	payload?: any,
 }
 
-export type { MoviesState };
-export default (state:MoviesState, action:Action) => {
+const MoviesReducer = (state:MoviesState, action:Action) => {
 	const { type, payload } = action;
 
 	switch (type) {
-		case SET_GROUPED_MOVIES:
+		case GET_MOVIES:
 			return {
 				...state,
 				movies: payload.movies,
 				groupedMovies: payload.groupedMovies,
+			}
+
+		case SET_GROUPED_MOVIES:
+			return {
+				...state,
+				groupedMovies: payload,
 			}
 
 		case ADD_MOVIE_VOTE:
@@ -42,3 +45,6 @@ export default (state:MoviesState, action:Action) => {
 			return state;
 	}
 }
+
+export type { MoviesState };
+export default MoviesReducer;

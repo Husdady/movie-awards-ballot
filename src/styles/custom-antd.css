@@ -39,14 +39,20 @@
   overflow-y: auto;
 }
 
+.autocomplete::-webkit-scrollbar {
+	width: 4px;
+}
+
 .ant-list-items::-webkit-scrollbar {
   width: 7px;
 }
 
+.autocomplete::-webkit-scrollbar-track,
 .ant-list-items::-webkit-scrollbar-track {
   background-color: var(--bg-gray);
 }
 
+.autocomplete::-webkit-scrollbar-thumb,
 .ant-list-items::-webkit-scrollbar-thumb {
   background-color: var(--bg-darkyellow);
 }

@@ -5,6 +5,7 @@ import Movie from "./Movie";
 import MovieImage from "./MovieImage";
 import SubmitVotes from "./SubmitVotes";
 import MoviesVoted from "./MoviesVoted";
+import Autocomplete from "./Autocomplete";
 
 export {
 	AppName,
@@ -14,4 +15,5 @@ export {
 	MovieImage,
 	MoviesVoted,
 	SubmitVotes,
+	Autocomplete,
 }

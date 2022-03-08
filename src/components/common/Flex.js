@@ -1,16 +1,10 @@
 // React
 import React from 'react';
 
-interface FlexProps { 
-  children: React.ReactNode
-  align?: String
-  justify?: String
-  wrap: Boolean
-  className?: String,
-  style?: Object,
-}
+// Utils
+import { isFunction } from "@utils/Validations";
 
-const Flex = (props: FlexProps) => {
+const Flex = (props) => {
 	const isAlignCenter = props.align === "center";
   const isJustifyCenter = props.justify === "center";
 
@@ -18,13 +12,26 @@ const Flex = (props: FlexProps) => {
   const justify = isJustifyCenter ? "j-center" : null;
   const wrap = props.wrap ? "wrap" : null;
 	const className = ["d-flex", align, justify, wrap, props.className].join(" ");
+  const isDivButton = isFunction(props.onClick) ? "button" : undefined;
+
+  const handleClick = (e) => {
+    e.stopPropagation();
+    e.preventDefault();
+    isFunction(props.onClick) && props.onClick();
+  }
 
   return (
-  	<div className={className} style={props.style}>
+  	<div
+      role={isDivButton}
+      style={props.style}
+      className={className}
+      onClick={handleClick}
+    >
   		{props.children}
   	</div>
   );
 }
+
 
 export default Flex;
 

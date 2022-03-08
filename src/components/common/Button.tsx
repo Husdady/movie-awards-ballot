@@ -20,13 +20,13 @@ const Button = (props: ButtonProps) => {
 		if (isEmptyObject(props.icon)) return;
 
 		return <FontAwesomeIcon {...props.icon} icon={props.icon.name} className="mr-4" />
-	}, []);
+	}, [props.icon]);
 
 	const renderTitle = useCallback(() => {
 		if (!isString(props.title)) return;
 
 		return <span>{props.title}</span>
-	}, []);
+	}, [props.title]);
 
 	const buttonStyle = {
 		backgroundColor: props.backgroundColor

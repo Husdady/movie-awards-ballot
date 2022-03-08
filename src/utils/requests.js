@@ -21,11 +21,22 @@ async function getMovies({ setGroupedMovies }) {
 			movies: movies,
 			groupedMovies: groupedMovies,
 		});
-	} catch(e) {console.log(e)
+	} catch(e) {
 		return message.error("An error ocurred for get the movies")
+	}
+}
+
+async function searchMovies({ query }) {
+	try {
+		const url = `${API_URL}/api/search?q=${query}`
+		const res = await axios.post(url);
+		return res.data.movies;
+	} catch(err) {
+		return message.error("An error ocurred to search movies")
 	}
 }
 
 export {
 	getMovies,
+	searchMovies,
 }

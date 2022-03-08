@@ -2,7 +2,9 @@
   "name": "tt",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://husdady.github.io/movie-awards-ballot",
   "dependencies": {
+    "@algolia/autocomplete-core": "1.5.3",
     "@fortawesome/fontawesome-svg-core": "^1.3.0",
     "@fortawesome/free-solid-svg-icons": "^6.0.0",
     "@fortawesome/react-fontawesome": "^0.1.17",
@@ -16,19 +18,23 @@
     "antd": "^4.18.9",
     "axios": "^0.26.0",
     "cors": "^2.8.5",
-    "customize-cra": "^1.0.0",
     "express": "^4.17.3",
+    "framer-motion": "^6.2.8",
+    "gh-pages": "^3.2.3",
     "nodemon": "^2.0.15",
     "react": "^17.0.2",
     "react-app-rewire-alias": "^1.1.7",
     "react-app-rewired": "^2.2.1",
     "react-dom": "^17.0.2",
+    "react-lazy-load-image-component": "^1.5.1",
     "react-scripts": "5.0.0",
     "swiper": "^8.0.7",
     "typescript": "^4.5.5",
     "web-vitals": "^2.1.4"
   },
   "scripts": {
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build",
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test",
@@ -39,7 +45,14 @@
     "extends": [
       "react-app",
       "react-app/jest"
-    ]
+    ],
+    "plugins": [
+      "react-hooks"
+    ],
+    "rules": {
+      "react-hooks/rules-of-hooks": "error",
+      "react-hooks/exhaustive-deps": "off"
+    }
   },
   "browserslist": {
     "production": [
@@ -52,5 +65,8 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/react-lazy-load-image-component": "^1.5.2"
   }
 }

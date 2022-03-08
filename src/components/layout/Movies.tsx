@@ -14,16 +14,26 @@ import { SwiperSlide } from "swiper/react";
 import { useMovies } from "@hooks";
 
 // Utils
-import { isEmptyObject } from "@utils/Validations";
+import Helper from "@utils/Helper";
+import { isEmptyArray, isEmptyObject } from "@utils/Validations";
 
 const { Title } = Typography;
 
 const Movies = () => {
-	const { getMovies, groupedMovies } = useMovies();
+	const { getMovies, movies, groupedMovies, setGroupedMovies } = useMovies();
 
-	useEffect(() =>{
-		getMovies();
-	}, [getMovies]);
+	useEffect(() => {
+		return getMovies();
+	}, []);
+
+	useEffect(() => {
+		const isEmptySearchValue = !isEmptyArray(movies) && isEmptyObject(groupedMovies);
+
+		if (isEmptySearchValue) {
+			const allMovies = Helper.groupMovies(movies);
+			setGroupedMovies(allMovies);
+		}
+	}, [groupedMovies, movies]);
 
 	return (
 		<Fragment>
@@ -65,7 +75,7 @@ type MovieType = {
 
 function renderMovies(movies:Array<MovieType>) {
 	return (
-		<Carousel speed={4000} spaceBetween={10} className="movies">
+		<Carousel spaceBetween={10} className="movies">
 			{movies.map((movie, i) => (
 				<SwiperSlide key={`${movie.id}-${i}`}>
 					<Movie {...movie} />

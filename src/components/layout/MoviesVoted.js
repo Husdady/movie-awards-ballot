@@ -7,17 +7,28 @@ import { List, Typography } from "antd";
 // Hooks
 import { useMovies } from "@hooks";
 
+// Utils
+import Helper from "@utils/Helper";
+
 const { Title } = Typography;
 
 const MoviesVoted = () => {
 	const { moviesVoted } = useMovies();
 
 	const renderMovies = useCallback((movie) => {
+		const imgAlt = Helper.convertEmptySpacesInHyphens(movie.title);
+		
 		return (
-			<List.Item className="movie-vote">
+			<List.Item className="movie">
 				{/* Movie Image */}
 				<figure>
-					<img src={movie.photoUrL} width={150} height={150} />
+					<img
+						width={150}
+						height={150}
+						alt={imgAlt}
+						loading="lazy"
+						src={movie.photoUrL}
+					/>
 				</figure>
 
 				<section>
@@ -36,7 +47,7 @@ const MoviesVoted = () => {
 	return (
 		<List
 			size="large"
-			className="movies-voted"
+			className="movies-details"
       dataSource={moviesVoted}
       renderItem={renderMovies}
    	/>
