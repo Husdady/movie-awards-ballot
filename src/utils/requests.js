@@ -26,6 +26,7 @@ async function getMovies({ setGroupedMovies }) {
 	}
 }
 
+// Search movies from API
 async function searchMovies({ query }) {
 	try {
 		const url = `${API_URL}/api/search?q=${query}`
