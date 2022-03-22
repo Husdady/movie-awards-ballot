@@ -21,7 +21,7 @@ async function getMovies({ setGroupedMovies }) {
 			movies: movies,
 			groupedMovies: groupedMovies,
 		});
-	} catch(e) {
+	} catch(e) {console.log('[e]', e.response)
 		return message.error("An error ocurred for get the movies")
 	}
 }
