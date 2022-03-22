@@ -2,8 +2,8 @@
 import React from 'react';
 
 // Librarys
-import SwiperCore, { Autoplay } from 'swiper';
 import { Swiper } from "swiper/react";
+import SwiperCore, { Autoplay } from 'swiper';
 
 // Hooks
 import { useSwiperViews } from "@hooks";

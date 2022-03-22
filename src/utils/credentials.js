@@ -1,1 +1,1 @@
-export const API_URL = "https://husdady.github.io/movie-awards-ballot";
+export const API_URL = "https://husdady.github.io/movie-awards-ballot.server";
