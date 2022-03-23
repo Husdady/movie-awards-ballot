@@ -1,22 +1,28 @@
 // React
-import React, { useCallback } from "react";
+import { Component, Fragment } from "react";
 
-// Utils
-import Helper from "@utils/Helper";
+class Loader extends Component {
+	shouldComponentUpdate() {
+		return false;
+	}
 
-const Loader = () => {
-	const renderSubDivs = useCallback(() => {
-		const subDivs = Helper.generateArray(9);
-		return subDivs.map((_, i) => <div key={i} />)
-	}, []);
-
-	return (
-		<div className="wrapper container-loader">
-			<div className="loader">
-				{renderSubDivs()}
-			</div>
-		</div>
-	)
+	render() {
+		return (
+			<Fragment>
+				<div className="wrapper" />
+				<div className="d-flex j-center align-items-center container-loader">
+					<div className="sk-chase">
+						<div className="sk-chase-dot"></div>
+						<div className="sk-chase-dot"></div>
+						<div className="sk-chase-dot"></div>
+						<div className="sk-chase-dot"></div>
+						<div className="sk-chase-dot"></div>
+						<div className="sk-chase-dot"></div>
+					</div>
+				</div>
+			</Fragment>
+		)
+	}
 }
 
 export default Loader;

@@ -8,7 +8,6 @@ import { Flex, Button } from "@common";
 import { message } from "antd";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { faVoteYea, faCheckCircle } from "@fortawesome/free-solid-svg-icons";
-import { LazyLoadImage } from "react-lazy-load-image-component";
 
 // Hooks
 import { useMovies } from "@hooks";
@@ -17,10 +16,18 @@ import { useMovies } from "@hooks";
 import Helper from "@utils/Helper";
 import { isEmptyArray } from "@utils/Validations";
 
-const imgPlaceholder = require("@assets/img/img-placeholder.png");
+const PreloadImage = require('react-preload-image').default;
+
+interface MovieProps {
+  id: string,
+  title: string,
+  photoUrL: string,
+  category: string,
+  movieCategory: string,
+}
 
 interface MovieImageProps {
-  movie: any,
+  movie: MovieProps
 }
 
 const MovieImage = memo((props: MovieImageProps) => {
@@ -35,7 +42,9 @@ const MovieImage = memo((props: MovieImageProps) => {
   const handleVote = useCallback(() => {
     setMovieVote(true);
     addMovieVote(props.movie);
-    message.success(`You voted for the movie ${props.movie.title}`)
+    const movieCategory = props.movie.movieCategory.toLowerCase();
+    const txt = `You voted for ${movieCategory}: "${props.movie.title}"`;
+    message.success(txt, 6);
   }, [addMovieVote, props.movie]);
 
   const renderContent = useCallback(() => {
@@ -58,15 +67,16 @@ const MovieImage = memo((props: MovieImageProps) => {
   const backgroundColor = isVoted ? "rgba(0,0,0,.84)" : "rgba(0,0,0,.64)";
 
 	return (
-    <figure className="position-relative">
-	   <LazyLoadImage
+    <figure className="position-relative" style={{ height: 400 }}>
+	   <PreloadImage
+        ease
+        lazy
+        width={350}
         height={350}
         alt={altImg}
-        effect="blur"
-        // placeholder={imgPlaceholder}
-        placeholderSrc={imgPlaceholder}
         src={props.movie.photoUrL}
-        className="movie-image"
+        className="movie-image absolute-total"
+        style={{ backgroundColor: "#222222" }}
      />
 
      {/* Image details */}

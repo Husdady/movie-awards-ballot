@@ -50,7 +50,7 @@ const Movies = () => {
 
 function renderGroupedMovies(groupedMovies:any) {
 	if (isEmptyObject(groupedMovies)) {
-		return <Skeletons totalItems={36} />
+		return <Skeletons />
 	}
 
 	const keys = Object.keys(groupedMovies);
@@ -60,7 +60,10 @@ function renderGroupedMovies(groupedMovies:any) {
 	return keys.map(key => (
 		<section key={key} className="mt-20">
 			<Title level={2} className="movie-category">{key}</Title>
-			{renderMovies(groupedMovies[key].movies)}
+			{renderMovies({ 
+				category: key,
+				movies: groupedMovies[key].movies,
+			})}
 		</section>
 	))
 	// 
@@ -73,12 +76,17 @@ type MovieType = {
 	title: string,
 }
 
-function renderMovies(movies:Array<MovieType>) {
+type TypeRenderMovie = {
+	category: string,
+	movies: Array<MovieType>,
+}
+
+function renderMovies({ movies, category }:TypeRenderMovie) {
 	return (
 		<Carousel spaceBetween={10} className="movies">
 			{movies.map((movie, i) => (
 				<SwiperSlide key={`${movie.id}-${i}`}>
-					<Movie {...movie} />
+					<Movie {...movie} movieCategory={category} />
 				</SwiperSlide>
 			))}
 		</Carousel>

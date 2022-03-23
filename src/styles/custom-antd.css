@@ -66,3 +66,11 @@
 		margin: auto;
 	}
 }
+
+@media (min-width: 385px) {
+	.ant-col-sm-12 {
+	    display: block;
+	    flex: 0 0 50%;
+	    max-width: 50%;
+	}
+}

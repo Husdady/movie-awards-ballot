@@ -14,6 +14,7 @@ interface MovieProps {
   title: string,
   photoUrL: string,
   category: string,
+  movieCategory: string,
 }
 
 const Movie = memo((props: MovieProps) => {

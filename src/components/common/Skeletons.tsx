@@ -7,15 +7,15 @@ import { Row, Col, Skeleton } from "antd";
 // Utils
 import Helper from "@utils/Helper";
 
-const Skeletons = ({ totalItems }: {totalItems:number}) => {
-	const skeletons = Helper.generateArray(totalItems);
+const Skeletons = () => {
+	const skeletons = Helper.generateArray(35);
 
 	return (
 		<Row gutter={[20, 20]}>
 			{skeletons.map((_, i) => (
 				<Col
 					key={i}
-					xs={16}
+					xs={24}
 					sm={12}
 					md={8}
 					lg={8}
