@@ -1,19 +1,19 @@
 {
   "files": {
-    "main.css": "/movie-awards-ballot/static/css/main.c91f76d8.css",
-    "main.js": "/movie-awards-ballot/static/js/main.ac8eb33e.js",
+    "main.css": "/movie-awards-ballot/static/css/main.b680aff5.css",
+    "main.js": "/movie-awards-ballot/static/js/main.db5ebacd.js",
     "static/js/921.61dacc83.chunk.js": "/movie-awards-ballot/static/js/921.61dacc83.chunk.js",
     "static/js/815.72a3ca5d.chunk.js": "/movie-awards-ballot/static/js/815.72a3ca5d.chunk.js",
-    "static/js/702.12d2d3ef.chunk.js": "/movie-awards-ballot/static/js/702.12d2d3ef.chunk.js",
+    "static/js/702.3257f67b.chunk.js": "/movie-awards-ballot/static/js/702.3257f67b.chunk.js",
     "static/js/306.973eb65a.chunk.js": "/movie-awards-ballot/static/js/306.973eb65a.chunk.js",
     "static/js/864.090b0b43.chunk.js": "/movie-awards-ballot/static/js/864.090b0b43.chunk.js",
-    "static/js/98.155fc8d7.chunk.js": "/movie-awards-ballot/static/js/98.155fc8d7.chunk.js",
+    "static/js/875.0823bf71.chunk.js": "/movie-awards-ballot/static/js/875.0823bf71.chunk.js",
     "static/js/82.f75203dd.chunk.js": "/movie-awards-ballot/static/js/82.f75203dd.chunk.js",
     "static/media/logo.png": "/movie-awards-ballot/static/media/logo.6d23425eb8422d4c60b9.png",
     "index.html": "/movie-awards-ballot/index.html"
   },
   "entrypoints": [
-    "static/css/main.c91f76d8.css",
-    "static/js/main.ac8eb33e.js"
+    "static/css/main.b680aff5.css",
+    "static/js/main.db5ebacd.js"
   ]
 }
